@@ -186,4 +186,63 @@ Schematic of 2x inverter (nmos w=2 , pmos w=4)
 
 ---
 ## 6. Power Analysis
+The power consumed by a CMOS (Complementary Metal-Oxide-Semiconductor) inverter depends on several factors, including the supply voltage (Vdd), the switching activity, and the parasitic capacitance at the output. The power consumed can be categorized into static power and dynamic power.
+
+Static Power (P_static): This is the power consumed by the CMOS inverter when it is not switching and is in a static state. It primarily depends on the leakage current through the transistors and is typically very low in CMOS technology, especially when the transistors are in the OFF state. Static power consumption increases with higher supply voltage and process technology.
+
+Dynamic Power (P_dynamic): Dynamic power is the power consumed when the CMOS inverter is actively switching its output in response to changes in the input signal. It depends on the following factors:
+
+Switching Frequency (f): How often the CMOS inverter switches its output.
+Load Capacitance (C_load): The capacitance at the output node, including the capacitance of any connected wires or gates.
+Supply Voltage (Vdd): The voltage level at which the inverter operates.
+Activity Factor (α): The proportion of time the signal spends in each logic state (0 or 1). For a simple inverter, α is typically 0.5 (equal time in each state).
+- We doing this power analysis in DC simulation of a standard inverter with the load capacitance of 0.2pf
+Total Power= (integral(p(t)) from 0 to T)/T
+ - To find the power we can use the command "meas dc curr_inte integ -vdd#branch from=20e-09 to=40e-09 " it will give a value of -7.29e-13
+   since the voltage is conatant multiply it with 1.8
+- Intermediate Power= -7.28e-12 * 1.8 = -1.31e-12
+- Now divide the Intermediate power by 20ns to find Instantenous Power
+- Inst_Power=(-1.31e-12/20e-12)= -6.559e-06 watts (-ve sign Indicates that the power is consumed)
+
+  - TOTAL POWER= 65.5 micro watts
+---
+## 7 . Layout of CMOS inverter using Magic tool
+
+The layout process of a CMOS  inverter involves physically designing the arrangement and connections of transistors and interconnects on a semiconductor substrate. This layout aims to create a functional CMOS inverter while optimizing for factors such as area, performance, and manufacturability. Here's a simplified overview of the layout process:
+
+1. **Substrate:** Start with a semiconductor substrate, typically made of silicon. The choice of the substrate material is essential for the electrical characteristics of the CMOS inverter.
+
+2. **Transistor Placement:** Place the NMOS (N-type Metal-Oxide-Semiconductor) and PMOS (P-type Metal-Oxide-Semiconductor) transistors in close proximity to each other. These transistors will form the core of the CMOS inverter.
+
+3. **Gate Formation:** Create the gate terminals for both the NMOS and PMOS transistors by depositing and patterning a layer of gate material, such as polysilicon. The gate material acts as a control terminal for the transistors.
+
+4. **Source and Drain Regions:** Define the source and drain regions of the transistors. This involves ion implantation or diffusion processes to create regions with the desired doping profiles.
+
+5. **Interconnects:** Add interconnect layers made of materials like metal or metal silicides. These interconnects connect various parts of the inverter, including the transistor terminals, power supply lines, and input/output connections.
+
+6. **Metal Layers:** Create metal layers to establish electrical connections between different parts of the CMOS inverter. These metal layers are used to route signals and power throughout the circuit.
+
+7. **Well Taps:** Insert well taps to connect the substrate to the power supply rails, ensuring proper biasing and electrical isolation.
+
+8. **Dummies and Spacer Cells:** In advanced semiconductor processes, dummy structures and spacer cells may be added to improve manufacturing yield and ensure uniformity across the chip.
+
+9. **Design Rules and DRC:** Ensure that the layout adheres to the design rules specified for the particular semiconductor manufacturing process. Design Rule Checking (DRC) tools are used to verify compliance with these rules.
+
+10. **Verification and Simulation:** After the layout is complete, perform simulations and verification to ensure that the CMOS inverter functions as intended and meets performance specifications.
+
+![layout](https://github.com/Rishikesh973/CMOS-Inverter-schematic-to-Layout/assets/145873226/50d2bb03-6817-491a-aa78-d496a15a42a6)
+
+
+---
+
+**Successfully the project  "CMOS inverter schematic to Layout" is done**
+
+
+
+
+
+
+
+
+
 

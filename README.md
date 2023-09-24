@@ -7,13 +7,13 @@ The task is to analyse the DC character of the nmos and pmos and is IV response 
 
 ---
 ## Contents
- - 1.Softwares Used
+- 1.Softwares Used
 -  2.DC sweep analysis of NMOS & PMOS
- - 3.Schamtic of CMOS Inverter
- - 4.Noise Margin Analysis
- - 5.Delay Analysis
- - 6.Power Analysis
- - 7.Layout
+- 3.Schamtic of CMOS Inverter
+-   4.Noise Margin Analysis
+- 5.Delay Analysis
+- 6.Power Analysis
+- 7.Layout
 
 
 ---

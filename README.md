@@ -150,19 +150,40 @@ When the input signal is low (0V), the NMOS transistor is off, while the PMOS tr
 ![low_tpHL](https://github.com/Rishikesh973/CMOS-Inverter-schematic-to-Layout/assets/145873226/374952bb-7039-498f-afa4-0d8fa74c486d)
 
 ### 5.3 Rise and Fall Time
-  The rise time (tR) and fall time (tF) of a CMOS inverter are key parameters that characterize how quickly the output voltage transitions from one logic state to another in response to a change in the input, usually it is calculated . These times are defined as follows:
+  The rise time (tR) and fall time (tF) of a CMOS inverter are key parameters that characterize how quickly the output voltage transitions from one logic state to another in response to a change in the input, usually it is calculated by taking different of time taken to reach 90% of value and 10% of the value . These times are defined as follows:
 
 Rise Time (tR): The rise time is the time it takes for the output voltage to transition from a logic low (0) to a logic high (1) when the input changes from a low to a high level. In other words, it measures how quickly the output rises when the input changes from 0 to 1.
+   tR=tR90 - tR10
 
 Fall Time (tF): The fall time is the time it takes for the output voltage to transition from a logic high (1) to a logic low (0) when the input changes from a high to a low level. It measures how quickly the output falls when the input changes from 1 to 0.
+   tF=tF10 - tR90
 
 These parameters are influenced by various factors, including the characteristics of the transistors used in the CMOS inverter, the load capacitance at the output, and the driving capabilities of the inverter. Generally, designers strive to minimize rise and fall times to ensure that digital signals switch quickly and accurately, especially in high-speed applications. Reducing these times can improve the overall speed and performance of digital circuits while also reducing the potential for signal integrity issues such as signal distortion and noise.
 
-
+- Rise and Fall time can be calculated in transient analysis using the commands in the following images
   
+![Rise_time](https://github.com/Rishikesh973/CMOS-Inverter-schematic-to-Layout/assets/145873226/9f97472a-68dd-4920-9cfa-4e2fb3511bfb) 
+![Fall_time](https://github.com/Rishikesh973/CMOS-Inverter-schematic-to-Layout/assets/145873226/ef0414a8-4996-49df-86dc-0a39214cf896)
+
+### 5.4 Loaded Delay Analysis
+- In digital circuits inverter may used in places where it has to drive the next cell in the circuit, so to analyse the loaded scenario, a 1pf capacitace is connected as load in output terminal
+- After adding Capacitor the standard inverter takes more time to rise and fall and its propagation delay is increased 
+![1xinv_with-c](https://github.com/Rishikesh973/CMOS-Inverter-schematic-to-Layout/assets/145873226/7b824979-51cd-4b5e-a305-e64ed809a9cb)
+
+- To overcome this issue we can increase the width of the transistor but the rule that width(pmos)=2*width(nmos) should hold always
+- Now we going to try out various sizes of inverter and see its Vtc & how size affact the propagation delay
+
+![2x_inv](https://github.com/Rishikesh973/CMOS-Inverter-schematic-to-Layout/assets/145873226/abab8d5f-73aa-4341-b56c-ae67bbcb094b)
+Schematic of 2x inverter (nmos w=2 , pmos w=4)
   
+  ![2xinv_with-c](https://github.com/Rishikesh973/CMOS-Inverter-schematic-to-Layout/assets/145873226/d021618e-ad71-42d6-a836-80a195b30ff2)
 
+- see how the timing parameter has changed by increasing the width
 
+   
+![8xinv_with-c](https://github.com/Rishikesh973/CMOS-Inverter-schematic-to-Layout/assets/145873226/a5009f77-638f-405c-829b-46ec971e29c9)
+- Vtc of 8x inverter, this inverter will have high drive strength, low propagation Delay ,low rise and fall time as it alligning with ideal inverter & also remember that when we increase the width the area and power consuption  will increase, we'll see the power analysis of inverter in next section
 
-
+---
+## 6. Power Analysis
 

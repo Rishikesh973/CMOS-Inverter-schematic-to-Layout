@@ -1,7 +1,4 @@
-# CMOS_Inverter:schematic-to-Layout
-CMOS_Inverter using sky130nm Technology 
 
-Design of cmos inverter schematic & analyzing its Noise Margin, Power and Delay
 INTRODUCTION
     A CMOS inverter is a digital electronic circuit that converts input logic levels into their complementary outputs, commonly used in digital logic design for signal inversion and amplification. It utilizes complementary metal-oxide-semiconductor (CMOS) technology for low power consumption and high-speed operation.
 SOFTWARE USED
